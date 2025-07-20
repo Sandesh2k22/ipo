@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ipo/static/css/main.0c9ff590.css",
+    "main.js": "/ipo/static/js/main.7c2a3f8b.js",
+    "index.html": "/ipo/index.html",
+    "main.0c9ff590.css.map": "/ipo/static/css/main.0c9ff590.css.map",
+    "main.7c2a3f8b.js.map": "/ipo/static/js/main.7c2a3f8b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c9ff590.css",
+    "static/js/main.7c2a3f8b.js"
+  ]
+}
