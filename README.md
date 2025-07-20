@@ -70,4 +70,6 @@ src/
 
 ## Author
 
-- **Your Name** — [GitHub Profile Link](https://github.com/yourusername)
+- **Sandesh Kandalkar** — [GitHub](https://github.com/Sandesh2k22)
+
+ [Live Repository on GitHub](https://github.com/Sandesh2k22/ipo)
