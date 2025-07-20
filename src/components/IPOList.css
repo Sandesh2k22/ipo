@@ -1,0 +1,44 @@
+.ipo-table-container {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ipo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ipo-table th, .ipo-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.ipo-table th {
+  background-color: #f8f9fa;
+}
+
+.ipo-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status-button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.status-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.status-button.inactive {
+  background-color: #e0e0e0;
+  color: black;
+}

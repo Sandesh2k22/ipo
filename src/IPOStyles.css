@@ -1,0 +1,131 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+h2 {
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+
+.add-ipo-container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-ipo-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.add-ipo-form input,
+.add-ipo-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-ipo-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-ipo-form button:hover {
+  background-color: #0056b3;
+}
+
+
+.ipo-table-container {
+  margin-top: 30px;
+}
+
+.ipo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ipo-table th,
+.ipo-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.ipo-table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.ipo-table td button {
+  margin-right: 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ipo-table td button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.ipo-table td button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+.status-buttons {
+  margin-bottom: 20px;
+}
+
+.status-buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.status-buttons button.active {
+  background-color: #343a40;
+  color: white;
+}
+
+.chart-container {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
