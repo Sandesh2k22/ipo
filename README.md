@@ -1,24 +1,30 @@
-#  IPO Dashboard
+#  IPO Web Application
+A full-stack web application to manage, add, edit and track IPO listings. Built using React.js for the frontend and Node.js + Express + PostgreSQL for the backend. The project includes real time CRUD operations and data visualization using Chart.js.
 
-A modern React-based dashboard to manage, add, edit, and track IPO listings using localStorage and interactive charts.
+#  Live Demo
+Frontend: https://Sandesh2k22.github.io/ipo
+Backend API: https://ipo-backend-2ra9.onrender.com
 
-##  Features
 
-- Add, edit, delete IPOs
-- Filter IPOs by status (Upcoming, Open, Closed)
-- ChartJS-based pie chart for visualizing IPO status
-- Styled with clean CSS
-- Data persistence with `localStorage`
+#  Features
 
-##  Tech Stack
+-  Add new IPO
+-  Edit IPO details
+-  Delete IPO
+-  View IPO details
+-  Filter IPOs by status (Upcoming, Open, Closed)
+-  Pie chart visualization using Chart.js
+-  Fully integrated with PostgreSQL database
 
-- React
-- Chart.js
-- JavaScript (ES6+)
-- HTML/CSS (Responsive)
-- localStorage API
+#  Tech Stack
 
-##  Folder Structure
+-  Frontend: React.js, Axios, React Router, Chart.js
+-  Backend: Node.js, Express.js, CORS
+-  Database: PostgreSQL (Hosted on Render)
+-  Deployment: GitHub Pages (Frontend), Render (Backend)
+-  Version Control: Git & GitHub
+
+#  Folder Structure (Frontend)
 src/
 |-components/
 |   |-IPOChart.js
@@ -37,10 +43,10 @@ src/
 |--index.js
 
 
-##  How to Run
+#  How to Run
 
 1. Install dependencies:
-   ```bash
+   
    npm install
 
 2. Start the development server:
@@ -53,22 +59,58 @@ src/
 
 4. Make changes and see live updates in development mode.
 
+#  API Endpoints
 
+    https://ipo-backend-2ra9.onrender.com/api/ipos
 
-## Screenshots
+#  How to Run Locally
+
+1. Clone the repository
+
+    git clone https://github.com/Sandesh2k22/ipo.git
+    cd ipo
+
+2. Install dependencies
+
+    npm install
+
+3. Start development server
+
+    npm start
+
+4. Backend Setup
+
+    Navigate to backend folder:
+
+        cd backend
+        npm install
+        npm run dev
+
+#  Learnings
+During this project, I learned:
+
+- How to build a full-stack application using React, Node.js, and PostgreSQL.
+
+- How to design and consume REST APIs for CRUD operations.
+
+- How to deploy a frontend on GitHub Pages and backend on Render.
+
+- Working with Axios for API calls and React Hooks for state management.
+
+- Implementing dynamic charts using Chart.js in React.
+
+- Handling CORS issues and securing environment variables.
+
+- Connecting a live database with cloud-hosted apps.
+
+#  Screenshots
 
 ![Dashboard image](image.png)
-
-## Learnings
-
-- State management with React
-- Working with `localStorage`
-- Using `Chart.js` in React
-- Routing with `react-router-dom`
-
+![Add New IPO image](img.png)
+![Edit IPO image](img2.png)
 ---
 
-## Author
+#  Author
 
 - **Sandesh Kandalkar** — [GitHub](https://github.com/Sandesh2k22)
 
