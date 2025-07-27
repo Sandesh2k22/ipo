@@ -103,6 +103,73 @@ During this project, I learned:
 
 - Connecting a live database with cloud-hosted apps.
 
+#  API Documentation
+
+- Base URL:
+    https://ipo-backend-2ra9.onrender.com/api/ipos
+
+1. Get All IPOs
+    - Endpoint:
+        GET /api/ipos
+    - Description: Fetch all IPO records.
+    - Sample Response:
+    [
+        {
+            "id": 1,
+            "name": "Bluestock",
+            "date": "2025-07-31",
+            "price": "450.00",
+            "status": "Upcoming"
+        }
+    ]
+2. Add New IPO
+    - Endpoint:
+        POST /api/ipos
+    - Description: Add a new IPO record.
+    - Sample Request Body:
+        {
+        "name": "Tech",
+        "date": "2025-08-15",
+        "price": "300.00",
+        "status": "Open"
+        }
+    - Sample Response:
+        {
+        "id": 2,
+        "name": "Tech",
+        "date": "2025-08-15",
+        "price": "300.00",
+        "status": "Open"
+        }
+3. Update IPO
+    - Endpoint:
+        PUT /api/ipos/:id
+    - Description: Update an existing IPO record by ID.
+    - Sample Request Body:
+        {
+        "name": "Tech Updated",
+        "date": "2025-08-20",
+        "price": "320.00",
+        "status": "Closed"
+        }
+    -Sample Response:
+        {
+        "id": 2,
+        "name": "Tech Updated",
+        "date": "2025-08-20",
+        "price": "320.00",
+        "status": "Closed"
+        }
+4. Delete IPO
+    -Endpoint:
+        DELETE /api/ipos/:id
+    - Description: Delete an IPO record by ID.
+    - Sample Response:
+        {
+        "message": "IPO deleted successfully"
+        }
+
+        
 #  Screenshots
 
 ![Dashboard ](image.png)
