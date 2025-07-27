@@ -105,9 +105,9 @@ During this project, I learned:
 
 #  Screenshots
 
-![Dashboard image](image.png)
-![Add New IPO image](img.png)
-![Edit IPO image](img2.png)
+![Dashboard ](image.png)
+![Add New IPO ](frontend/img.png)
+![Edit IPO ](frontend/img2.png)
 ---
 
 #  Author
