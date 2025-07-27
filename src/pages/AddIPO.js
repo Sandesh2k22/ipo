@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getIPOs, addIPO } from '../utils/ipoStorage';
-import './AddIPO.css'; 
+import { addIPO } from '../utils/ipoStorage';
+import './AddIPO.css';
 
 function AddIPO() {
   const [form, setForm] = useState({
@@ -14,23 +14,20 @@ function AddIPO() {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newIPO = {
-      id: getIPOs().length + 1,
-      ...form,
-    };
-
-    addIPO(newIPO);
-    alert('IPO Added Successfully!');
-    navigate('/');
+    try {
+      await addIPO(form);
+      alert('✅ IPO added successfully!');
+      navigate('/');
+    } catch (error) {
+      console.error("Error adding IPO:", error);
+      alert('❌ Failed to add IPO. Check console.');
+    }
   };
 
   return (
@@ -53,7 +50,9 @@ function AddIPO() {
           <option value="Closed">Closed</option>
         </select>
 
-        <button type="submit">Add IPO</button>
+        <button type="submit" style={{ marginTop: '15px', padding: '8px 16px' }}>
+          Add IPO
+        </button>
       </form>
     </div>
   );

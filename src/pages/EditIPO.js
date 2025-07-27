@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getIPOs, updateIPO } from '../utils/ipoStorage';
 import './AddIPO.css';
 
 function EditIPO() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const ipoId = parseInt(id);
 
   const [form, setForm] = useState({
     name: '',
@@ -16,33 +15,38 @@ function EditIPO() {
   });
 
   useEffect(() => {
-    const ipoList = getIPOs();
-    const ipoToEdit = ipoList.find((ipo) => ipo.id === ipoId);
-    if (ipoToEdit) {
-      setForm({
-        name: ipoToEdit.name,
-        date: ipoToEdit.date,
-        price: ipoToEdit.price,
-        status: ipoToEdit.status,
-      });
-    } else {
-      alert('IPO not found!');
-      navigate('/');
-    }
-  }, [ipoId, navigate]);
+    const fetchIPO = async () => {
+      try {
+        const ipos = await getIPOs();
+        const ipo = ipos.find((item) => item.id === parseInt(id));
+        if (ipo) {
+          setForm(ipo);
+        } else {
+          alert("IPO not found!");
+          navigate('/');
+        }
+      } catch (error) {
+        console.error("Error fetching IPO:", error);
+      }
+    };
+
+    fetchIPO();
+  }, [id, navigate]);
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    updateIPO(ipoId, form);
-    alert('IPO Updated Successfully!');
-    navigate('/');
+    try {
+      await updateIPO(id, form);
+      alert('✅ IPO updated successfully!');
+      navigate('/');
+    } catch (error) {
+      console.error("Error updating IPO:", error);
+      alert('❌ Failed to update IPO.');
+    }
   };
 
   return (
@@ -53,7 +57,7 @@ function EditIPO() {
         <input type="text" name="name" value={form.name} onChange={handleChange} required />
 
         <label>Date</label>
-        <input type="date" name="date" value={form.date} onChange={handleChange} required />
+        <input type="date" name="date" value={form.date.split('T')[0]} onChange={handleChange} required />
 
         <label>Price</label>
         <input type="number" name="price" value={form.price} onChange={handleChange} required />
@@ -65,7 +69,9 @@ function EditIPO() {
           <option value="Closed">Closed</option>
         </select>
 
-        <button type="submit">Update IPO</button>
+        <button type="submit" style={{ marginTop: '15px', padding: '8px 16px' }}>
+          Save Changes
+        </button>
       </form>
     </div>
   );

@@ -1,31 +1,43 @@
-const STORAGE_KEY = 'ipoList';
+import axios from "axios";
 
-export const getIPOs = () => {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  return stored ? JSON.parse(stored) : [];
-};
+const API_URL = "https://ipo-backend-2ra9.onrender.com/api/ipos";
 
-export const saveIPOs = (ipoList) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(ipoList));
-};
 
-export const addIPO = (ipo) => {
-  const current = getIPOs();
-  const newList = [...current, ipo];
-  saveIPOs(newList);
-};
-
-export function deleteIPO(id) {
-  const existing = getIPOs();
-  const updated = existing.filter((ipo) => ipo.id !== id);
-  saveIPOs(updated);
-}
-
-export function updateIPO(id, updatedData) {
-  let data = getIPOs();
-  const index = data.findIndex(ipo => ipo.id === id);
-  if (index !== -1) {
-    data[index] = { ...updatedData, id };
-    saveIPOs(data);
+export const getIPOs = async () => {
+  try {
+    const response = await axios.get(API_URL);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching IPOs:", error);
+    return [];
   }
-}
+};
+
+
+export const addIPO = async (ipo) => {
+  try {
+    const response = await axios.post(API_URL, ipo);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding IPO:", error);
+  }
+};
+
+
+export const updateIPO = async (id, updatedData) => {
+  try {
+    const response = await axios.put(`${API_URL}/${id}`, updatedData);
+    return response.data;
+  } catch (error) {
+    console.error("Error updating IPO:", error);
+  }
+};
+
+export const deleteIPO = async (id) => {
+  try {
+    const response = await axios.delete(`${API_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting IPO:", error);
+  }
+};
