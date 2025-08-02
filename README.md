@@ -173,8 +173,6 @@ During this project, I learned:
 #  Screenshots
 
 ![Dashboard ](image.png)
-![Add New IPO ](frontend/img.png)
-![Edit IPO ](frontend/img2.png)
 ---
 
 #  Author
